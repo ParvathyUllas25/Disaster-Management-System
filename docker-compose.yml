@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build: .
+    ports:
+      - "8081:80"   # Maps container port 80 to localhost:8080
+    environment:
+      DB_HOST: host.docker.internal  # Connect to XAMPP MySQL
+      DB_USER: root
+      DB_PASSWORD:  # Default XAMPP MySQL password (empty)
+      DB_NAME: dams  # Replace with actual database name
+    depends_on: []
